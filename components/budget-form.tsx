@@ -72,7 +72,7 @@ export default function BudgetForm() {
 
       // Show success message (you can add a toast notification here)
       alert("Orçamento gerado com sucesso!");
-      
+
       // Optionally reset form
       // form.reset();
     } catch (error) {
@@ -84,8 +84,8 @@ export default function BudgetForm() {
   };
 
   return (
-    <Card className="w-full max-w-4xl mx-auto shadow-2xl border-0 bg-white/95 backdrop-blur-sm">
-      <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
+    <Card className="w-full max-w-4xl mx-auto shadow-2xl border-0 bg-white/95 backdrop-blur-sm p-0">
+      <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg p-8">
         <CardTitle className="text-3xl font-bold flex items-center gap-3">
           <FileText className="w-8 h-8" />
           Gerador de Orçamentos
@@ -232,14 +232,14 @@ export default function BudgetForm() {
                                     onCheckedChange={(checked) => {
                                       return checked
                                         ? field.onChange([
-                                            ...field.value,
-                                            service.id,
-                                          ])
+                                          ...field.value,
+                                          service.id,
+                                        ])
                                         : field.onChange(
-                                            field.value?.filter(
-                                              (value) => value !== service.id
-                                            )
-                                          );
+                                          field.value?.filter(
+                                            (value) => value !== service.id
+                                          )
+                                        );
                                     }}
                                   />
                                 </FormControl>
